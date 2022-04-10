@@ -25,6 +25,10 @@ class _MyHomePageState extends State<MainScreen>
   late List<String> itemList;
   late final Ticker _ticker;
 
+  Color getColor(int seed){
+    return seed % 2 == 1 ? Colors.pinkAccent : Colors.lightBlue;
+  }
+
   // void _incrementCounter() {
   //   setState(() {
   //     // This call to setState tells the Flutter framework that something has
@@ -86,7 +90,7 @@ class _MyHomePageState extends State<MainScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'drag the screen or list to view frame test:',
+              'drag the screen or list for 60 hz refresh, scroll release sreen or list for 120hz refresh',
             ),
             TextButton(
               child: const Text(
@@ -101,7 +105,7 @@ class _MyHomePageState extends State<MainScreen>
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(itemList[index]),
-                  tileColor: const Color.fromRGBO(200, 200, 200, 1),
+                  tileColor: getColor(index),
                 );
               },
             ))

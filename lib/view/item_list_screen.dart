@@ -20,6 +20,10 @@ class ItemListScreenState extends State {
     itemList = List<String>.generate(10000, (i) => "Item $i");
   }
 
+  Color getColor(int seed){
+    return seed % 2 == 1 ? Colors.pinkAccent : Colors.lightBlue;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +37,7 @@ class ItemListScreenState extends State {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(itemList[index]),
+            tileColor: getColor(index),
           );
         },
       ),

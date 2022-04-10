@@ -7,7 +7,7 @@ class WsRouter {
   static const list = 'list';
 
   static final Map<String, WidgetBuilder> routes = {
-    main: (ctx) => const MainScreen(title: '测试一下'),
+    main: (ctx) => const MainScreen(title: 'testing'),
     list: (ctx) {
       return ItemListScreen();
     }
